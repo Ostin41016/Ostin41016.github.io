@@ -1,0 +1,193 @@
+/* Слайдер */ 
+.slick-slider{}
+
+/* Слайдер запущен */
+.slick-slider.slick-initialized{}
+
+/* Слайдер с точками */
+.slick-slider.slick-dotted{}
+
+
+/* Ограничивающая оболочка */ 
+.slick-list {}
+
+/* Лента слайдов */ 
+.slick-track{}
+
+/* Слайд */ 
+.slick-slide{}
+
+/* Слайд активный (показывается) */ 
+.slick-slide.slick-active{}
+
+/* Слайд основной */ 
+.slick-slide.slick-current{}
+
+/* Слайд по центру */ 
+.slick-slide.slick-center{}
+
+/* Клонированный слайд */ 
+.slick-slide.slick-cloned{}
+
+
+/* Стрелка */ 
+.slick-arrow{}
+
+/* Стрелка влево */ 
+.slick-arrow.slick-prev{}
+
+/* Стрелка вправо */ 
+.slick-arrow.slick-next{}
+
+/* Стрелка не активная */ 
+.slick-arrow.slick-disabled{}
+
+
+/* Точки (булиты) */ 
+.slick-dots{} 
+.slick-dots li{}
+
+/* Активная точка */ 
+.slick-dots li.slick-active{}
+
+/* Элемент точки */ 
+.slick-dots li button{}
+
+.slider {
+	position: relative;
+	width: 336px;
+	height: 272px;
+	@media (max-width:$md2+px){
+		width: 300px;
+		height: 250px;
+	}
+	@media (max-width:$md3+px){
+		width: 270px;
+		height: 200px;
+	}
+	&__item {
+		box-shadow: 20px 20px 0 rgba(253,230,72, 0.5);
+		border: 5px solid rgba(201,76,76, 0.45);
+		border-radius: 0 100px 0px 100px;
+		background-color: rgba(3,3,3, 0.2);
+		height: 272px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@media (max-width:$md2+px){
+			box-shadow: 15px 15px 0px rgba(253,230,72, 0.5);
+			border: 3px solid rgba(201,76,76, 0.45);
+			height: 240px;
+		}
+		@media (max-width:$md3+px){
+			height: 200px;
+		}
+		&_html {
+			box-shadow: 20px 20px 0 rgba(241,101,41, 0.5);
+			@media (max-width:$md2+px){
+				box-shadow: 15px 15px 0 rgba(241,101,41, 0.5);
+			}
+		}
+		&_css {
+			box-shadow: 20px 20px 0 rgba(88,192,167, 0.5);
+			@media (max-width:$md2+px){
+				box-shadow: 15px 15px 0 rgba(88,192,167, 0.5);
+			}
+		}
+		&_sass {
+			box-shadow: 20px 20px 0 rgba(140,200,75, 0.5);
+			@media (max-width:$md2+px){
+				box-shadow: 15px 15px 0 rgba(140,200,75, 0.5);
+			}
+		}
+		&_wp {
+			box-shadow: 20px 20px 0 rgba(44,152,196, 0.5);
+			@media (max-width:$md2+px){
+				box-shadow: 15px 15px 0 rgba(44,152,196, 0.5);
+			}
+		}
+
+	}
+	&__item-image {
+		display: flex;
+		justify-content: center;
+		margin-top: -10px;
+		img {
+			width: 100%;
+			@media (max-width:$md2+px){
+				width: 80%;
+			}
+			@media (max-width:$md3+px){
+				width: 65%;
+			}
+		}
+		@media (max-width:$md2+px){
+			margin: -10px 0px 0px 0px;
+		}
+	}
+	&__item-descr {
+		margin: 20px 0px 0px 0px;
+		line-height: 20px;
+		color: rgba(255,255,255, 0.8);
+		font-size: 17px;
+		font-weight: 600;
+		max-width: 258px;
+		text-align: center;
+		@media (max-width:$md2+px){
+			font-size: 16px;
+			line-height: 16px;
+			margin: 15px 0px 0px 0px;
+			padding: 0px 0px 0px 10px;
+		}
+		@media (max-width:$md3+px){
+			max-width: 200px;
+		}
+	}
+	.slick-list {
+		overflow: hidden;
+		box-sizing: initial;
+		padding: 20px 20px;
+	}
+	.draggable {}
+	.slick-track{
+		display: block;
+	}
+	.slick-slide.slick-active{
+		opacity: 1;
+		@include anim(1s,0s);
+	}
+	.slick-slide{
+		opacity: 0;
+		@include anim(1s,0s);
+	}
+	.slick-dots{
+		position: absolute;
+		right: -10%;
+		top: 35%;
+	} 
+	.slick-dots li{}
+
+	/* Активная точка */ 
+	.slick-dots li.slick-active{}
+	.slick-dots li.slick-active button{
+		// border: 3px solid rgba(255, 255, 255, 0.6);
+		background-color: rgb(215, 22, 22);
+		@include anim(1s,0s);
+	}
+
+	/* Элемент точки */ 
+	.slick-dots li button{
+		font-size: 0;
+		height: 13px;
+		width: 13px;
+		border-radius: 50%;
+		background-color: rgba(255, 255, 255, 1);
+		margin-bottom: 14px;
+		@include anim(1s,0s);
+		@media (max-width:$md2+px){
+			height: 10px;
+			width: 10px;
+		}
+	}
+}
